@@ -2,7 +2,7 @@ USE atp_tennis;
 
 -- 1. Number of Players by Tournaments
 
-wITH players_list AS
+WITH players_list AS
 		((SELECT
 			t.tournament_name,
             YEAR(m.date) AS season,
