@@ -8,9 +8,10 @@ DROP TABLE IF EXISTS players;
 -- Creating table players
 
 CREATE TABLE players (
-    player_id INT PRIMARY KEY AUTO_INCREMENT,
+	player_id INT PRIMARY KEY AUTO_INCREMENT,
     player_name VARCHAR(100) NOT NULL
-) AUTO_INCREMENT = 10001;
+    )
+AUTO_INCREMENT = 10001;
 
 -- Creating table tournaments
 
@@ -20,7 +21,8 @@ CREATE TABLE tournaments (
     series VARCHAR(50),
     court_type VARCHAR(50),
     surface VARCHAR(50)
-) AUTO_INCREMENT = 1001;
+	)
+AUTO_INCREMENT = 1001;
 
 -- Creating table matches
 
@@ -44,7 +46,8 @@ CREATE TABLE matches (
     FOREIGN KEY (player1_id) REFERENCES players(player_id),
     FOREIGN KEY (player2_id) REFERENCES players(player_id),
     FOREIGN KEY (winner_id) REFERENCES players(player_id)
-) AUTO_INCREMENT = 10001;
+	)
+AUTO_INCREMENT = 10001;
 
 -- Creating a temporary table to add files
 
@@ -68,7 +71,7 @@ CREATE TABLE raw_tennis (
     Odd_1 FLOAT,
     Odd_2 FLOAT,
     Score VARCHAR(50)
-);
+	);
 
 -- Importing data into temporary table
 
@@ -108,7 +111,7 @@ SET SQL_SAFE_UPDATES = 1;
 
 INSERT INTO players (player_name)
 SELECT DISTINCT Player_1 FROM raw_tennis
-UNION
+			UNION
 SELECT DISTINCT Player_2 FROM raw_tennis;
 
 -- Filling table tournaments
@@ -136,12 +139,11 @@ SELECT
     r.Odd_2,
     r.Score
 FROM raw_tennis r
-JOIN tournaments t 
-    ON r.Tournament = t.tournament_name
-    AND r.Series = t.series
-    AND r.Court = t.court_type
-    AND r.Surface = t.surface
-JOIN players p1 ON r.Player_1 = p1.player_name
-JOIN players p2 ON r.Player_2 = p2.player_name
-JOIN players pw ON r.Winner = pw.player_name;
+		JOIN tournaments t ON r.Tournament = t.tournament_name
+								AND r.Series = t.series
+								AND r.Court = t.court_type
+								AND r.Surface = t.surface
+		JOIN players p1 ON r.Player_1 = p1.player_name
+		JOIN players p2 ON r.Player_2 = p2.player_name
+		JOIN players pw ON r.Winner = pw.player_name;
 
