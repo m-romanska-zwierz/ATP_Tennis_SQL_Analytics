@@ -39,7 +39,7 @@ ATP_Tennis_SQL_Analytics/
 > **Important**: Do **not download** the dataset manually from Kaggle.  
 > The version used in this project has been cleaned and modified — only the file included in this repository will work correctly with the provided SQL scripts.
 
-The dataset is included directly in the repository for convenience and reproducibility.
+The dataset is included directly in the repository.
 
 - **File**: `data/atp_tennis.csv`  
 - **Format**: CSV (tournament details, players, results, rankings, betting odds, scores)  
