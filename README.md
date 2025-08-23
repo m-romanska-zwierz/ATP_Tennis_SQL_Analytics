@@ -20,12 +20,15 @@ The project showcases strong SQL skills, including:
 ATP_Tennis_SQL_Analytics/
 │
 ├── data/
-│ └── atp_tennis.csv # Original dataset (CC0 Public Domain)
+│   └── atp_tennis.csv                # Original dataset (CC0 Public Domain)
 │
 ├── sql/
-│ ├── ATP_Tennis_Creating_Database.sql # Database creation & ETL
-│ ├── ATP_Tennis_Players.sql # Player-focused queries (25 queries)
-│ └── ATP_Tennis_Tournaments.sql # Tournament-focused queries (9 queries)
+│   ├── ATP_Tennis_Creating_Database.sql   # Database creation & ETL
+│   ├── ATP_Tennis_Players.sql             # Player-focused queries (25 queries)
+│   └── ATP_Tennis_Tournaments.sql         # Tournament-focused queries (9 queries)
+│
+├── diagrams/
+│   └── EER_Diagram.png                # Entity-Relationship Diagram (visual schema)
 │
 ├── README.md
 
@@ -48,6 +51,14 @@ The relational schema consists of three main tables:
 - **matches** – match-level data (with foreign keys to players and tournaments)  
 
 Additionally, a staging table `raw_tennis` is used during ETL for loading and cleaning data.  
+
+---
+
+## Entity-Relationship Diagram (EER)
+To better illustrate the database structure, the project includes an **EER Diagram** (`EER_Diagram.png`).  
+It shows the relationships between `players`, `tournaments`, and `matches`, as well as foreign key constraints.  
+
+![EER Diagram](EER_Diagram.png)
 
 ---
 
