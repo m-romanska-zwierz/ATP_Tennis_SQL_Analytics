@@ -3,16 +3,19 @@ USE atp_tennis;
 -- 1. Number of Matches Played by Player
 
 WITH players_by_matches AS
-	((SELECT player1_id AS player FROM matches)
+	((SELECT player1_id AS player_id FROM matches)
 				UNION ALL
 	(SELECT player2_id FROM matches))
 SELECT
-	player,
-    COUNT(player) AS matches_played
+	pm.player_id,
+    p.player_name,
+    COUNT(pm.player_id) AS matches_played
 FROM
-	players_by_matches
-GROUP BY player
-ORDER BY player;
+	players_by_matches pm
+		JOIN
+	players p ON p.player_id = pm.player_id
+GROUP BY pm.player_id
+ORDER BY p.player_name;
 
 -- 2. Number of Matches Won by Player
 

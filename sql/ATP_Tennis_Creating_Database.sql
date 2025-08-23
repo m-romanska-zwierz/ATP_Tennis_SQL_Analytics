@@ -75,9 +75,9 @@ CREATE TABLE raw_tennis (
 
 -- Importing data into temporary table
 
-LOAD DATA LOCAL INFILE '/Users/malgorzataromanska/Documents/Projekty/ATP_Tennis/atp_tennis.csv'
+LOAD DATA LOCAL INFILE 'atp_tennis.csv'
 INTO TABLE raw_tennis
-FIELDS TERMINATED BY ',' 
+FIELDS TERMINATED BY ';' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
