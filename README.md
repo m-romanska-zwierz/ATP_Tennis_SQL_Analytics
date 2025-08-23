@@ -17,21 +17,22 @@ The project showcases strong SQL skills, including:
 
 ## Repository Structure
 
+```text
 ATP_Tennis_SQL_Analytics/
 │
 ├── data/
-│ └── atp_tennis.csv # Original dataset (CC0 Public Domain)
+│   └── atp_tennis.csv                 # Original dataset (CC0 Public Domain)
 │
 ├── sql/
-│ ├── ATP_Tennis_Creating_Database.sql # Database creation & ETL
-│ ├── ATP_Tennis_Players.sql # Player-focused queries (25 queries)
-│ └── ATP_Tennis_Tournaments.sql # Tournament-focused queries (9 queries)
+│   ├── ATP_Tennis_Creating_Database.sql   # Database creation & ETL
+│   ├── ATP_Tennis_Players.sql             # Player-focused queries (25 queries)
+│   └── ATP_Tennis_Tournaments.sql         # Tournament-focused queries (9 queries)
 │
 ├── diagrams/
-│ └── EER_Diagram.png # Entity-Relationship Diagram (visual schema)
+│   └── EER_Diagram.png                # Entity-Relationship Diagram (visual schema)
 │
 └── README.md
-
+```
 ---
 
 ## Dataset
