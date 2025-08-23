@@ -58,7 +58,7 @@ Additionally, a staging table `raw_tennis` is used during ETL for loading and cl
 To better illustrate the database structure, the project includes an **EER Diagram** (`EER_Diagram.png`).  
 It shows the relationships between `players`, `tournaments`, and `matches`, as well as foreign key constraints.  
 
-![EER Diagram](diagrams/EER_Diagram.png)
+![EER Diagram](diagram/EER_Diagram.png)
 
 ---
 
