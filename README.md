@@ -36,10 +36,14 @@ ATP_Tennis_SQL_Analytics/
 ---
 
 ## Dataset
-- **Source**: [Kaggle – ATP Tennis 2000–2023 Daily Pull](https://www.kaggle.com/datasets/dissfya/atp-tennis-2000-2023daily-pull)  
-- **Format**: CSV (tournament details, players, results, rankings, betting odds, scores)
-  
-The dataset is directly included in the repository for reproducibility and easy testing.   
+> **Important**: Do **not download** the dataset manually from Kaggle.  
+> The version used in this project has been cleaned and modified — only the file included in this repository will work correctly with the provided SQL scripts.
+
+The dataset is included directly in the repository for convenience and reproducibility.
+
+- **File**: `data/atp_tennis.csv`  
+- **Format**: CSV (tournament details, players, results, rankings, betting odds, scores)  
+- **License**: Based on [Kaggle – ATP Tennis 2000–2023 Daily Pull](https://www.kaggle.com/datasets/dissfya/atp-tennis-2000-2023daily-pull), originally released under CC0 Public Domain.
 
 ---
 
@@ -63,8 +67,18 @@ It shows the relationships between `players`, `tournaments`, and `matches`, as w
 ---
 
 ## How to Run
-1. **Download the dataset** from Kaggle.  
-2. Update the path in `LOAD DATA LOCAL INFILE` inside `ATP_Tennis_Creating_Database.sql`.  
+
+1. Make sure the file `data/atp_tennis.csv` is in the correct location  
+   *(it is already included in the repository)*.
+
+2. The script `ATP_Tennis_Creating_Database.sql` uses a relative path in `LOAD DATA LOCAL INFILE`,  
+   so **no manual path update is required**:
+
+   ```sql
+   LOAD DATA LOCAL INFILE 'data/atp_tennis.csv'
+   INTO TABLE raw_tennis
+   ...
+ 
 3. Run the script in **MySQL**:  
    - Creates database `atp_tennis`  
    - Cleans and normalizes raw data  
